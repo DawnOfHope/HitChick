@@ -7,6 +7,8 @@
     android:background="@drawable/bg"
     tools:context="com.example.zorahu.hitchick.WelcomeActivity">
 
+
+
     <ImageView
         android:id="@+id/upImg"
         android:layout_width="match_parent"
@@ -16,6 +18,7 @@
          />
 
     <ImageView
+        android:id="@+id/underImg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/under"
@@ -24,5 +27,77 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="488dp"
          />
+
+
+    <TextView
+        android:id="@+id/scoreBar"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:background="@drawable/scrocebar"
+        android:layout_marginTop="2.5dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/upTriangle"
+        android:layout_width="94dp"
+        android:layout_height="39dp"
+        android:src="@drawable/uptriangle"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/upImg"
+        android:layout_alignLeft="@+id/underTriangle"
+        android:layout_alignStart="@+id/underTriangle" />
+
+    <ImageView
+        android:id="@+id/underTriangle"
+        android:layout_width="94dp"
+        android:layout_height="39dp"
+        android:src="@drawable/undertri"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="480dp"/>
+
+    <Button
+        android:id="@+id/btnBanner1"
+        android:layout_width="348dp"
+        android:layout_height="101dp"
+        android:background="@drawable/banner1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="125dp"/>
+    <Button
+        android:id="@+id/btnBanner2"
+        android:layout_width="348dp"
+        android:layout_height="101dp"
+        android:background="@drawable/banner2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="245dp"/>
+    <Button
+        android:id="@+id/btnBanner3"
+        android:layout_width="348dp"
+        android:layout_height="101dp"
+        android:background="@drawable/banner3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="365dp"/>
+
+    <Button
+        android:id="@+id/btnEquip"
+        android:layout_width="144dp"
+        android:layout_height="66dp"
+        android:background="@drawable/btn1"
+        android:layout_marginTop="548dp"
+        android:layout_marginLeft="25dp"
+
+        />
+    <Button
+        android:id="@+id/btnSet"
+        android:layout_width="144dp"
+        android:layout_height="66dp"
+        android:background="@drawable/btn2"
+        android:layout_marginTop="548dp"
+        android:layout_marginLeft="25dp"
+        android:layout_toRightOf="@id/btnEquip"
+        />
+
+
+
 
 </RelativeLayout>
