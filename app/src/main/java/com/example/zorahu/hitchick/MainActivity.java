@@ -28,8 +28,7 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
         WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-        int num1;
-        num1 = (int)(Math.random()*10)+1;
+
 
         imageViewList = (ImageView) findViewById(R.id.hole);
 
