@@ -57,13 +57,6 @@
         android:layout_marginTop="480dp"/>
 
     <ImageButton
-        android:id="@+id/btnBanner1"
-        android:layout_width="348dp"
-        android:layout_height="101dp"
-        android:background="@drawable/banner1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="125dp"/>
-    <ImageButton
         android:id="@+id/btnBanner2"
         android:layout_width="348dp"
         android:layout_height="101dp"
@@ -97,6 +90,15 @@
         android:layout_toRightOf="@id/btnEquip"
         />
 
+    <ImageButton
+        android:id="@+id/btnBanner1"
+        android:layout_width="348dp"
+        android:layout_height="101dp"
+        android:background="@drawable/banner1"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/upTriangle"
+        android:layout_alignLeft="@+id/btnBanner2"
+        android:layout_alignStart="@+id/btnBanner2" />
 
 
 

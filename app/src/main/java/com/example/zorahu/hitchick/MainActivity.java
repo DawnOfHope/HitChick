@@ -1,8 +1,6 @@
 package com.example.zorahu.hitchick;
 
 import android.os.Handler;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -52,23 +50,38 @@ public class MainActivity extends AppCompatActivity {
         };
 
         handler = new Handler();
-
+        play = true;
         chickSprites = new ChickSprite[9];
         for (int i= 0; i < chickSprites.length ; i++){
             chickSprites[i] = new ChickSprite(imageViewList[i]);
+
             imageViewList[i].setOnTouchListener(new ChickOnTouchLister(chickSprites[i]));
+            Thread t = new Thread(chickSprites[i]);
+            t.start();
+
+
         }
+
     }
 
     private class ChickSprite implements Runnable{
         ImageView imageView;
         int idx;
         boolean hit;
+        boolean isFirst = true;
+
         ChickSprite(ImageView imageView){
             this.imageView = imageView;
         }
         @Override
         public void run() {
+            if (isFirst) {
+                isFirst = false;
+                int n = (int)(Math.random()*1000)%5+1;
+                System.out.println("n = " + n);
+                handler.postDelayed(this, n * 500);
+                return;
+            }
             draw();
         }
         private void draw(){
@@ -80,13 +93,15 @@ public class MainActivity extends AppCompatActivity {
                 imageView.setImageResource(R.drawable.dg);//變更成傷害圖片
                 hit = false;//還原點擊屬性
                 idx = 0;//調整陣列維度
-                handler.postDelayed(this,5000);//每次遞迴延遲秒數
+                handler.postDelayed(this,100);//每次遞迴延遲秒數
 
             }else {
+
                 idx = idx % manychick.length;
                 imageView.setImageResource(manychick[idx]);
-                int n = (int)(Math.random()*1000)%3+1;
-                handler.postDelayed(this,(n*300));//遞迴呼叫秒數
+                //TODO
+                int n = (int)(Math.random()*1000)%8+1;
+                handler.postDelayed(this,(n*100));//遞迴呼叫秒數
                 idx = ++idx % manychick.length;
             }
         }
@@ -107,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
                         manychick[bobogi.idx] == R.drawable.j6 ||
                         manychick[bobogi.idx] == R.drawable.j7){
                     bobogi.hit = true;
+                    //TODO
                     scoreBar.setText(String.valueOf(++score));
 
                 }else {
@@ -116,5 +132,9 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     }
+
+
+
+
 
 }

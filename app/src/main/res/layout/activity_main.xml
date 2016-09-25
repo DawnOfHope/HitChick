@@ -78,15 +78,6 @@
         />
 
     <ImageView
-        android:id="@+id/hole4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/hole"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="-25dp"
-        android:layout_marginTop="180dp"/>
-    <ImageView
         android:id="@+id/hole5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -131,6 +122,15 @@
         android:layout_marginRight="-25dp"
         android:layout_marginTop="350dp"
         />
+
+    <ImageView
+        android:id="@+id/hole4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/hole"
+        android:layout_alignTop="@+id/hole5"
+        android:layout_alignLeft="@+id/hole7"
+        android:layout_alignStart="@+id/hole7" />
 
 
 </RelativeLayout>
