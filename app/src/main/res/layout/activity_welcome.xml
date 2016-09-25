@@ -56,7 +56,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="480dp"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/btnBanner1"
         android:layout_width="348dp"
         android:layout_height="101dp"
