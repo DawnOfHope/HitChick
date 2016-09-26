@@ -1,5 +1,6 @@
 package com.example.zorahu.hitchick;
 
+import android.content.Intent;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.SoundPool;
@@ -87,6 +88,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //接收 EquipActivity 的資料區
+//    Bundle bundle = this.getIntent().getExtras();
+//    final String test1 = bundle.getString("btnArms1");
+
+//    Intent intent = this.getIntent();
+//    String test1 = intent.getStringExtra("btnArms1");
+
+
+
     private class ChickSprite implements Runnable{
         ImageView imageView;
         int idx;
@@ -148,6 +158,9 @@ public class MainActivity extends AppCompatActivity {
                         manychick[bobogi.idx] == R.drawable.j7){
                     bobogi.hit = true;
                     soundPool.play(touchId, 1, 1, 0, 0, 1);
+//                    if ( test1 == "ok"){
+//                        scoreBar.setText(String.valueOf(10+score));
+//                    }
                     scoreBar.setText(String.valueOf(++score));
 
                 }else {
@@ -179,6 +192,9 @@ public class MainActivity extends AppCompatActivity {
 
         touchId = soundPool.load(this,R.raw.middle_punch1,1);
     }
+
+
+
 
 
     //遊戲結束返回首頁

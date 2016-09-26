@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 
 public class EquipActivity extends AppCompatActivity {
     private ImageButton btnBack;
+    private ImageButton btnArms1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +28,33 @@ public class EquipActivity extends AppCompatActivity {
                 goWelcome();
             }
         });
-    }
 
+//        btnArms1 = (ImageButton) findViewById(R.id.arms1);
+//        btnArms1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                equipWithArms1();
+//            }
+//        });
+
+    }
+    //回首頁
     private void goWelcome(){
         Intent intent = new Intent(this,WelcomeActivity.class);
         startActivity(intent);
         finish();
     }
+
+    //裝備武器1
+//    private void equipWithArms1(){
+//        Intent intent = new Intent();
+//        intent.setClass(EquipActivity.this,MainActivity.class);
+////        Bundle bundle = new Bundle();
+////        bundle.putString("btnArms1","ok");
+////        intent.putExtras(bundle);
+//        intent.putExtra("btnArms1","ok");
+////        startActivity(intent);
+//
+//    }
+
 }
