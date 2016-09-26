@@ -100,12 +100,15 @@ public class MainActivity extends AppCompatActivity {
         public void run() {
             if (isFirst) {
                 isFirst = false;
-                int n = (int)(Math.random()*1000)%5+1;
+                int n = (int)(Math.random()*1000)%10+1;
                 System.out.println("n = " + n);
                 handler.postDelayed(this, n * 500);
                 return;
             }
+
+
             draw();
+
         }
         private void draw(){
             if (!play){
@@ -122,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
                 idx = idx % manychick.length;
                 imageView.setImageResource(manychick[idx]);
-                int n = (int)(Math.random()*1000)%8+1;
+                int n = (int)(Math.random()*1000)%5+1;
                 handler.postDelayed(this,(n*100));//遞迴呼叫秒數
                 idx = ++idx % manychick.length;
             }
@@ -148,9 +151,12 @@ public class MainActivity extends AppCompatActivity {
                     scoreBar.setText(String.valueOf(++score));
 
                 }else {
-                    scoreBar.setText(String.valueOf(--score));
+                    if (score != 0){
+                        scoreBar.setText(String.valueOf(--score));
+                    }
                 }
             }
+
             return false;
         }
     }
@@ -173,6 +179,11 @@ public class MainActivity extends AppCompatActivity {
 
         touchId = soundPool.load(this,R.raw.middle_punch1,1);
     }
+
+
+    //遊戲結束返回首頁
+
+    //TODO
 
 
 
