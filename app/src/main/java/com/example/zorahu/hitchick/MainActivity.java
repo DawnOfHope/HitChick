@@ -20,14 +20,13 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private ImageView[] imageViewList;
-    private TextView scoreBar,timerBar;
+    private TextView scoreBar,timerBar,scoreTotal;
     private int[] manychick;
     private boolean play;
     private Handler handler;
-    private int score;
+    private int score,touchId;
     private ChickSprite[] chickSprites;
     private SoundPool soundPool;
-    private int touchId;
     private ImageButton btnBack;
     private ImageView winPage;
 
@@ -41,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         scoreBar = (TextView) findViewById(R.id.scoreBar);
+        scoreTotal = (TextView)findViewById(R.id.scoreTotal);
         //建立hole陣列
         imageViewList = new ImageView[]{
                 (ImageView) findViewById(R.id.hole),
@@ -97,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
                 timerBar.setText("遊戲結束");
                 btnBack.setVisibility(View.VISIBLE);
                 winPage.setVisibility(View.VISIBLE);
+                scoreTotal.setVisibility(View.VISIBLE);
+                scoreTotal.setText(String.valueOf(score));
             }
         }.start();
 
@@ -182,9 +184,11 @@ public class MainActivity extends AppCompatActivity {
 //                    }
                     scoreBar.setText(String.valueOf(++score));
 
+
                 }else {
                     if (score != 0){
                         scoreBar.setText(String.valueOf(--score));
+
                     }
                 }
             }

@@ -11,10 +11,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 public class WelcomeActivity extends AppCompatActivity {
-    private ImageButton btnBanner1;
-    private ImageButton btnEquip;
-    private ImageButton btnBanner2;
-    private ImageButton btnSet;
+    private ImageButton btnBanner1,btnBanner2,btnEquip,btnSet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
