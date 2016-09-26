@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
             Thread t = new Thread(chickSprites[i]);
             t.start();
 
-
         }
 
     }
