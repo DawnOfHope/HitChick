@@ -1,5 +1,9 @@
 package com.example.zorahu.hitchick;
 
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.os.Build;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     private int score;
     private ChickSprite[] chickSprites;
     private TextView timerBar;
+    private SoundPool soundPool;
+    private int touchId;
 
 
     @Override
@@ -77,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }.start();
 
+        buildSoundPool();
+
     }
 
     private class ChickSprite implements Runnable{
@@ -114,7 +122,6 @@ public class MainActivity extends AppCompatActivity {
 
                 idx = idx % manychick.length;
                 imageView.setImageResource(manychick[idx]);
-                //TODO
                 int n = (int)(Math.random()*1000)%8+1;
                 handler.postDelayed(this,(n*100));//遞迴呼叫秒數
                 idx = ++idx % manychick.length;
@@ -137,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
                         manychick[bobogi.idx] == R.drawable.j6 ||
                         manychick[bobogi.idx] == R.drawable.j7){
                     bobogi.hit = true;
-                    //TODO
+                    soundPool.play(touchId, 1, 1, 0, 0, 1);
                     scoreBar.setText(String.valueOf(++score));
 
                 }else {
@@ -146,6 +153,25 @@ public class MainActivity extends AppCompatActivity {
             }
             return false;
         }
+    }
+
+    //建立音效
+    private void buildSoundPool(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            AudioAttributes attr = new AudioAttributes.Builder()
+                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .setUsage(AudioAttributes.USAGE_GAME)
+                    .build();
+            soundPool = new SoundPool.Builder()
+                    .setMaxStreams(10)
+                    .setAudioAttributes(attr)
+                    .build();
+
+        }else {
+            soundPool = new SoundPool(10, AudioManager.STREAM_MUSIC,0);
+        }
+
+        touchId = soundPool.load(this,R.raw.middle_punch1,1);
     }
 
 
