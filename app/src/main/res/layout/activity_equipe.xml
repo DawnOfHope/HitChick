@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_equipe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context="com.example.zorahu.hitchick.EquipActivity">
+
+    <ImageView
+        android:id="@+id/upImg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/upimg"
+        android:adjustViewBounds="true"
+        />
+
+    <TextView
+        android:id="@+id/scoreBar"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:background="@drawable/scrocebar"
+        android:layout_marginTop="2.5dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/equipPage"
+        android:layout_width="355dp"
+        android:layout_height="504dp"
+        android:src="@drawable/eqpage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
+
+
+    <ImageView
+        android:id="@+id/underImg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/under"
+        android:layout_below="@+id/upImg"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="512dp"
+        />
+
+    <ImageView
+        android:id="@+id/upTriangle"
+        android:layout_width="94dp"
+        android:layout_height="39dp"
+        android:src="@drawable/uptriangle"
+        android:layout_marginTop="55dp"
+        android:layout_below="@+id/upImg"
+        android:layout_alignLeft="@+id/underTriangle"
+        android:layout_alignStart="@+id/underTriangle" />
+
+    <ImageView
+        android:id="@+id/underTriangle"
+        android:layout_width="94dp"
+        android:layout_height="39dp"
+        android:src="@drawable/undertri"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="500dp"/>
+
+    <ImageButton
+        android:id="@+id/arms1"
+        android:layout_width="310dp"
+        android:layout_height="105dp"
+        android:background="@drawable/arms1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"/>
+    <ImageButton
+        android:id="@+id/arms2"
+        android:layout_width="310dp"
+        android:layout_height="105dp"
+        android:background="@drawable/arms2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="265dp"/>
+    <ImageButton
+        android:id="@+id/arms3"
+        android:layout_width="310dp"
+        android:layout_height="105dp"
+        android:background="@drawable/arms3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="385dp"/>
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/k2"
+        android:layout_marginTop="15dp"
+        android:layout_alignTop="@+id/equipPage"
+        android:layout_alignRight="@+id/arms1"
+        android:layout_alignEnd="@+id/arms1" />
+
+
+</RelativeLayout>

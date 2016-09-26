@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 
 public class WelcomeActivity extends AppCompatActivity {
     private ImageButton btnbanner1;
+    private ImageButton btnEquip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +31,28 @@ public class WelcomeActivity extends AppCompatActivity {
                 gotoMainPlay();
             }
         });
+
+        btnEquip = (ImageButton) findViewById(R.id.btnEquip);
+        btnEquip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnEquip.setBackgroundResource(R.drawable.btnact);
+                gotoEquip();
+            }
+        });
+
     }
 
     private void gotoMainPlay(){
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    private void gotoEquip(){
+        Intent intent = new Intent(this,EquipActivity.class);
+        startActivity(intent);
+        finish();
+
     }
 }

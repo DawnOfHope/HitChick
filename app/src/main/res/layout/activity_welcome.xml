@@ -18,15 +18,15 @@
          />
 
     <ImageView
-        android:id="@+id/underImg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/under"
-        android:layout_below="@+id/upImg"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="512dp"
-         />
+    android:id="@+id/underImg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:src="@drawable/under"
+    android:layout_below="@+id/upImg"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_marginTop="512dp"
+    />
 
 
     <TextView
@@ -95,11 +95,10 @@
         android:layout_width="348dp"
         android:layout_height="101dp"
         android:background="@drawable/banner1"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="17dp"
         android:layout_below="@+id/upTriangle"
         android:layout_alignLeft="@+id/btnBanner2"
         android:layout_alignStart="@+id/btnBanner2" />
-
 
 
 </RelativeLayout>
