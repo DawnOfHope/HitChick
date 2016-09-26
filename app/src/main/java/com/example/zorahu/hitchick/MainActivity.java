@@ -13,21 +13,23 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private ImageView[] imageViewList;
-    private TextView scoreBar;
+    private TextView scoreBar,timerBar;
     private int[] manychick;
     private boolean play;
     private Handler handler;
     private int score;
     private ChickSprite[] chickSprites;
-    private TextView timerBar;
     private SoundPool soundPool;
     private int touchId;
+    private ImageButton btnBack;
+    private ImageView winPage;
 
 
     @Override
@@ -69,7 +71,19 @@ public class MainActivity extends AppCompatActivity {
             t.start();
 
         }
+        //戰報
+        btnBack = (ImageButton) findViewById(R.id.btnBack);
+        winPage = (ImageView)findViewById(R.id.winPage);
 
+        btnBack.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                btnBack.setBackgroundResource(R.drawable.k2a);
+                goWelcome();
+            }
+        });
+
+        //時間倒數
         timerBar =(TextView) findViewById(R.id.timeBar);
         new CountDownTimer(30000,1000){
             @Override
@@ -81,10 +95,15 @@ public class MainActivity extends AppCompatActivity {
             public void onFinish() {
                 play = false;
                 timerBar.setText("遊戲結束");
+                btnBack.setVisibility(View.VISIBLE);
+                winPage.setVisibility(View.VISIBLE);
             }
         }.start();
 
+        //音效
         buildSoundPool();
+
+
 
     }
 
@@ -198,8 +217,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     //遊戲結束返回首頁
+    private void goWelcome(){
 
-    //TODO
+        Intent intent = new Intent(this,WelcomeActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+
 
 
 

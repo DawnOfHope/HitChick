@@ -133,6 +133,24 @@
         android:layout_alignTop="@+id/hole5"
         android:layout_alignLeft="@+id/hole7"
         android:layout_alignStart="@+id/hole7" />
+    <ImageView
+        android:id="@+id/winPage"
+        android:layout_width="331dp"
+        android:layout_height="153dp"
+        android:background="@drawable/mg01"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        />
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/k2"
+        android:layout_marginTop="246dp"
+        android:layout_marginLeft="300dp"
+        android:visibility="invisible"
+        />
 
 
 
