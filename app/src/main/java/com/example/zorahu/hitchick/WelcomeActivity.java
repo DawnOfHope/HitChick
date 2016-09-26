@@ -69,7 +69,7 @@ public class WelcomeActivity extends AppCompatActivity {
     private void gotoEquip(){
         Intent intent = new Intent(this,EquipActivity.class);
         startActivity(intent);
-        finish();
+        //finish();
 
     }
 }

@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 btnBack.setVisibility(View.VISIBLE);
                 winPage.setVisibility(View.VISIBLE);
                 scoreTotal.setVisibility(View.VISIBLE);
-                scoreTotal.setText(String.valueOf(score));
+                scoreTotal.setText("總得分:"+String.valueOf(score));
             }
         }.start();
 
@@ -222,7 +222,6 @@ public class MainActivity extends AppCompatActivity {
 
     //遊戲結束返回首頁
     private void goWelcome(){
-
         Intent intent = new Intent(this,WelcomeActivity.class);
         startActivity(intent);
         finish();
