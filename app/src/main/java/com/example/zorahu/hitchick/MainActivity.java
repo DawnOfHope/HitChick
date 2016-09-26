@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
     //接收 EquipActivity 的資料區
 //    Bundle bundle = this.getIntent().getExtras();
-//    final String test1 = bundle.getString("btnArms1");
+//    String test1 = bundle.getString("btnArms1");
 
 //    Intent intent = this.getIntent();
 //    String test1 = intent.getStringExtra("btnArms1");

@@ -11,8 +11,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 public class WelcomeActivity extends AppCompatActivity {
-    private ImageButton btnbanner1;
+    private ImageButton btnBanner1;
     private ImageButton btnEquip;
+    private ImageButton btnBanner2;
+    private ImageButton btnSet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +24,21 @@ public class WelcomeActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_welcome);
 
-        btnbanner1 = (ImageButton) findViewById(R.id.btnBanner1);
-        btnbanner1.setOnClickListener(new View.OnClickListener(){
+        btnBanner1 = (ImageButton) findViewById(R.id.btnBanner1);
+        btnBanner1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                btnbanner1.setBackgroundResource(R.drawable.banner1act);
+                btnBanner1.setBackgroundResource(R.drawable.banner1act);
 
+                gotoMainPlay();
+            }
+        });
+
+        btnBanner2 = (ImageButton) findViewById(R.id.btnBanner2);
+        btnBanner2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnBanner2.setBackgroundResource(R.drawable.banner2act);
                 gotoMainPlay();
             }
         });
@@ -37,6 +48,15 @@ public class WelcomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 btnEquip.setBackgroundResource(R.drawable.btnact);
+                gotoEquip();
+            }
+        });
+
+        btnSet = (ImageButton) findViewById(R.id.btnSet);
+        btnSet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnSet.setBackgroundResource(R.drawable.btn2act);
                 gotoEquip();
             }
         });
