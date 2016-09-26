@@ -39,22 +39,20 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <ImageView
+    <TextView
         android:id="@+id/timeBar"
         android:layout_width="311dp"
         android:layout_height="34dp"
-        android:src="@drawable/timebar"
+        android:background="@drawable/timebar"
+        android:text="剩餘時間："
+        android:textSize="25dp"
+        android:textColor="#ff0"
+        android:gravity="center"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="589dp"
         />
 
-    <ImageView
-        android:id="@+id/timeBarIn"
-        android:layout_width="268dp"
-        android:layout_height="16dp"
-        android:src="@drawable/timebarinlong"
-        android:layout_marginTop="598dp"
-        android:layout_marginLeft="58dp"/>
+
 
     <ImageView
         android:id="@+id/hole"
@@ -135,6 +133,15 @@
         android:layout_alignTop="@+id/hole5"
         android:layout_alignLeft="@+id/hole7"
         android:layout_alignStart="@+id/hole7" />
+
+
+    <!--<ImageView-->
+        <!--android:id="@+id/timeBarIn"-->
+        <!--android:layout_width="268dp"-->
+        <!--android:layout_height="16dp"-->
+        <!--android:src="@drawable/timebarinlong"-->
+        <!--android:layout_marginTop="598dp"-->
+        <!--android:layout_marginLeft="58dp"/>-->
 
 
 </RelativeLayout>

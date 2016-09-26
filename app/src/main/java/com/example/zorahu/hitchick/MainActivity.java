@@ -1,5 +1,6 @@
 package com.example.zorahu.hitchick;
 
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Handler handler;
     private int score;
     private ChickSprite[] chickSprites;
+    private TextView timerBar;
 
 
     @Override
@@ -60,6 +62,20 @@ public class MainActivity extends AppCompatActivity {
             t.start();
 
         }
+
+        timerBar =(TextView) findViewById(R.id.timeBar);
+        new CountDownTimer(30000,1000){
+            @Override
+            public void onTick(long millisUntilFinished) {
+                timerBar.setText(" 剩餘時間：" + millisUntilFinished/1000);
+            }
+
+            @Override
+            public void onFinish() {
+                play = false;
+                timerBar.setText("遊戲結束");
+            }
+        }.start();
 
     }
 
