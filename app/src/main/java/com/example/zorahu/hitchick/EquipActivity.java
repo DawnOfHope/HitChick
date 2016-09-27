@@ -7,10 +7,14 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class EquipActivity extends AppCompatActivity {
-    private ImageButton btnBack;
-    private ImageButton btnArms1;
+    private ImageButton btnBack,btnArms1,btnArms2;
+    private ImageView equipStar1,equipStar2;
+    private int whetherStar;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,23 +33,62 @@ public class EquipActivity extends AppCompatActivity {
             }
         });
 
-//        btnArms1 = (ImageButton) findViewById(R.id.arms1);
-//        btnArms1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                equipWithArms1();
-//            }
-//        });
+        whetherStar = 0;
+        equipStar1 = (ImageView) findViewById(R.id.equipStar1);
+        equipStar2 = (ImageView) findViewById(R.id.equipStar2);
+
+        btnArms1 = (ImageButton) findViewById(R.id.arms1);
+        btnArms1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (whetherStar != 2){
+                    equipStar1.setVisibility(View.VISIBLE);
+                    whetherStar = 1;
+                }
+//                equipWeapon();
+
+            }
+        });
+
+        btnArms2 = (ImageButton) findViewById(R.id.arms2);
+        btnArms2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (whetherStar != 1){
+                    equipStar2.setVisibility(View.VISIBLE);
+                    whetherStar = 2;
+                }
+
+            }
+        });
+
 
     }
     //回首頁
     private void goWelcome(){
         Intent intent = new Intent(this,WelcomeActivity.class);
+        intent.putExtra("whetherEquip",whetherStar);
         startActivity(intent);
         finish();
     }
 
-    //裝備武器判斷
+//    //裝備武器判斷
+//    private void equipWeapon(){
+//        Intent intent = new Intent(this,MainActivity.class);
+//        intent.putExtra("whetherEquip",whetherStar);
+//        startActivity(intent);
+//
+//    }
+
+
+
+
+
+
+
+
+
+
 
 
 }
