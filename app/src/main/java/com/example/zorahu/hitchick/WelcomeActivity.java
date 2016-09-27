@@ -36,7 +36,7 @@ public class WelcomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 btnBanner2.setBackgroundResource(R.drawable.banner2act);
-                gotoMainPlay();
+                gotoP2P();
             }
         });
 
@@ -60,8 +60,16 @@ public class WelcomeActivity extends AppCompatActivity {
 
     }
 
+    //單機戰鬥
     private void gotoMainPlay(){
         Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    //P2P戰鬥
+    private void gotoP2P(){
+        Intent intent = new Intent(this,P2PfightActivity.class);
         startActivity(intent);
         finish();
     }

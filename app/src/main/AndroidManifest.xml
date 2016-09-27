@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".EquipActivity"></activity>
+        <activity android:name=".P2PfightActivity"></activity>
     </application>
 
 </manifest>

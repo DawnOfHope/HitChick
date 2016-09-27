@@ -98,5 +98,23 @@
         android:layout_alignRight="@+id/arms1"
         android:layout_alignEnd="@+id/arms1" />
 
+    <ImageView
+        android:id="@+id/equipStar1"
+        android:layout_width="48dp"
+        android:layout_height="46dp"
+        android:src="@drawable/k6"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="150dp"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/equipStar2"
+        android:layout_width="48dp"
+        android:layout_height="46dp"
+        android:src="@drawable/k6"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="265dp"
+        android:visibility="invisible"/>
+
 
 </RelativeLayout>

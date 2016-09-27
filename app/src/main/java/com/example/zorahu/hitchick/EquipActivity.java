@@ -45,16 +45,7 @@ public class EquipActivity extends AppCompatActivity {
         finish();
     }
 
-    //裝備武器1
-//    private void equipWithArms1(){
-//        Intent intent = new Intent();
-//        intent.setClass(EquipActivity.this,MainActivity.class);
-////        Bundle bundle = new Bundle();
-////        bundle.putString("btnArms1","ok");
-////        intent.putExtras(bundle);
-//        intent.putExtra("btnArms1","ok");
-////        startActivity(intent);
-//
-//    }
+    //裝備武器判斷
+
 
 }
