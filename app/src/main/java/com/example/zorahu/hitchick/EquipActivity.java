@@ -72,13 +72,7 @@ public class EquipActivity extends AppCompatActivity {
         finish();
     }
 
-//    //裝備武器判斷
-//    private void equipWeapon(){
-//        Intent intent = new Intent(this,MainActivity.class);
-//        intent.putExtra("whetherEquip",whetherStar);
-//        startActivity(intent);
-//
-//    }
+
 
 
 

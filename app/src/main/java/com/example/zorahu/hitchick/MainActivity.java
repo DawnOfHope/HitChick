@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private int[] manychick;
     private boolean play;
     private Handler handler;
-    private int score,touchId,whetherEquip;
+    private int score,touchId,whetherEquip,score1;
     private ChickSprite[] chickSprites;
     private SoundPool soundPool;
     private ImageButton btnBack;
@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
         //音效
         buildSoundPool();
 
+        //接收首頁傳來的裝備值
         int whetherStarNumIs = getIntent().getIntExtra("whetherStarNumIs",0);
         whetherEquip = whetherStarNumIs;
 
@@ -179,16 +180,28 @@ public class MainActivity extends AppCompatActivity {
                     soundPool.play(touchId, 1, 1, 0, 0, 1);
 
                     if (whetherEquip != 0 && whetherEquip !=2){
-                        scoreBar.setText(String.valueOf(+(score+10)));
+                        score = 10;
+                        scoreBar.setText(String.valueOf(++score));
+                    }else if (whetherEquip != 0 && whetherEquip !=1){
+                        score = 100;
+                        scoreBar.setText(String.valueOf(++score));
                     }else {
+                        score = 1;
                         scoreBar.setText(String.valueOf(++score));
                     }
 
 
                 }else {
-                    if (score != 0){
+                    if (score != 0 && whetherEquip !=2){
+                        score = 10;
                         scoreBar.setText(String.valueOf(--score));
 
+                    }else if (whetherEquip != 0 && whetherEquip !=1){
+                        score =100;
+                        scoreBar.setText(String.valueOf(--score));
+                    }else {
+                        score = 1;
+                        scoreBar.setText(String.valueOf(--score));
                     }
                 }
             }

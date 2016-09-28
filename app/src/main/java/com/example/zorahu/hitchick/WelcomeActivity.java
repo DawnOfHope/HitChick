@@ -58,9 +58,9 @@ public class WelcomeActivity extends AppCompatActivity {
                 gotoEquip();
             }
         });
+
+        //接收裝備武器的判斷值
         whetherStarNum = 0;
-//        Bundle bundle = this.getIntent().getExtras();
-//        int whetherEquip = bundle.getInt("whetherEquip",0);
         int whetherEquip = getIntent().getIntExtra("whetherEquip",0);
 
         whetherStarNum = whetherEquip;
@@ -74,6 +74,7 @@ public class WelcomeActivity extends AppCompatActivity {
     //單機戰鬥
     private void gotoMainPlay(){
         Intent intent = new Intent(this,MainActivity.class);
+        //將接收的裝備判斷值轉給戰鬥頁面
         intent.putExtra("whetherStarNumIs",whetherStarNum);
         startActivity(intent);
         finish();
