@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private int[] manychick;
     private boolean play;
     private Handler handler;
-    private int score,touchId,whetherEquip,score1;
+    private int score,touchId,whetherEquip;
     private ChickSprite[] chickSprites;
     private SoundPool soundPool;
     private ImageButton btnBack;
@@ -180,27 +180,21 @@ public class MainActivity extends AppCompatActivity {
                     soundPool.play(touchId, 1, 1, 0, 0, 1);
 
                     if (whetherEquip != 0 && whetherEquip !=2){
-                        score = 10;
-                        scoreBar.setText(String.valueOf(++score));
+                        scoreBar.setText(String.valueOf(score += 10));
                     }else if (whetherEquip != 0 && whetherEquip !=1){
-                        score = 100;
-                        scoreBar.setText(String.valueOf(++score));
+                        scoreBar.setText(String.valueOf(score += 100));
                     }else {
-                        score = 1;
                         scoreBar.setText(String.valueOf(++score));
                     }
 
 
                 }else {
                     if (score != 0 && whetherEquip !=2){
-                        score = 10;
-                        scoreBar.setText(String.valueOf(--score));
+                        scoreBar.setText(String.valueOf(score -= 10));
 
                     }else if (whetherEquip != 0 && whetherEquip !=1){
-                        score =100;
-                        scoreBar.setText(String.valueOf(--score));
+                        scoreBar.setText(String.valueOf(score -= 100));
                     }else {
-                        score = 1;
                         scoreBar.setText(String.valueOf(--score));
                     }
                 }
